@@ -177,3 +177,37 @@ input:focus {
     font-size: 12px;
   }
 }
+
+@media (max-width: 360px) {
+  body {
+    background: #213864;
+  }
+
+  .box {
+    width: 95%;
+    margin-left: 5%;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  input {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .google-btn,
+  .facebook-btn {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .text-center {
+    font-size: 12px;
+  }
+}
