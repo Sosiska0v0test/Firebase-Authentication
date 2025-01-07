@@ -1,0 +1,122 @@
+body {
+  background: linear-gradient(135deg, #213864 0%, #557bbb 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+.box {
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #357abd;
+  transform: translateY(-3px);
+}
+
+.google-btn,
+.facebook-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px;
+  transition: transform 0.2s ease;
+}
+
+.google-btn {
+  background-color: #db4437;
+  color: white;
+}
+
+.google-btn:hover {
+  background-color: #b63329;
+  transform: translateY(-2px);
+}
+
+.facebook-btn {
+  background-color: #3b5998;
+  color: white;
+}
+
+.facebook-btn:hover {
+  background-color: #324b81;
+  transform: translateY(-2px);
+}
+
+.text-center {
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
+.text-center a {
+  color: #4a90e2;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .box {
+    margin: 0 15px;
+    padding: 20px;
+  }
+}
