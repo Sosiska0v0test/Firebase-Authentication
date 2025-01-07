@@ -3,45 +3,33 @@ import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { FaFacebookSquare, FaGoogle } from "react-icons/fa";
-import { useUserAuth } from "../context/UserAuthContext";
+import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { logIn, googleSignIn, facebookSignIn } = useUserAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
     try {
-      await logIn(email, password);
-      navigate("/main");
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
-    try {
-      await googleSignIn();
+      const result = await signInWithPopup(auth, provider);
+      console.log(result.user);
       navigate("/main");
     } catch (error) {
-      console.log(error.message);
       setError(error.message);
     }
   };
 
-  const handleFacebookSignIn = async (e) => {
-    e.preventDefault();
-    setError("");
+  const handleFacebookSignIn = async () => {
+    const provider = new FacebookAuthProvider();
     try {
-      await facebookSignIn();
+      const result = await signInWithPopup(auth, provider);
+      console.log(result.user);
       navigate("/main");
     } catch (error) {
-      console.log(error.message);
       setError(error.message);
     }
   };
@@ -50,7 +38,7 @@ const Login = () => {
     <div className="p-4 box">
       <h2 className="mb-3">Firebase Auth</h2>
       {error && <Alert variant="danger">{error}</Alert>}
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="email"
